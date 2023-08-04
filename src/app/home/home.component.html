@@ -1,0 +1,31 @@
+<div class="flex flex-col items-center justify-center h-screen overflow-y: auto;">
+    <!-- Start-up component -->
+    <div class="startup mb-10">
+      <h1 *ngIf="!showInformation">Welcome to My Load Shedding App!</h1>
+      <div class="search-container mt-4">
+        <!-- Searchbar component -->
+        <app-searchbar (searchTown)="getLoadSheddingData($event)"></app-searchbar>
+      </div>
+    </div>
+  
+    <!-- Information component -->
+    <div class="information" *ngIf="showInformation">
+      <h2>Information for {{ searchedTown }}</h2>
+      <app-information [currentStage]="currentStage" [schedule]="schedule"></app-information>
+      <button
+      class="px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+      (click)="toggleConsole()"
+      routerLink="/console">
+        Show in Code
+      </button>
+      
+    </div>
+  
+    <!-- Console component -->
+    <!-- <div class="console" *ngIf="showConsole">
+      <h2>Console Component</h2>
+      <app-console [apiResponse]="apiResponse"></app-console>
+    </div> -->
+  </div>
+
+  

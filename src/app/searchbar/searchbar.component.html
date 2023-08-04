@@ -1,0 +1,51 @@
+<!-- <div class="relative">
+    <input
+      type="text"
+      class="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+      placeholder="Search for a town..."
+    />
+    <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+      <svg
+        class="w-5 h-5 text-gray-400"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+        aria-hidden="true"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M12.293 13.707l4.997 4.996a1 1 0 01-1.414 1.414l-4.996-4.997a8 8 0 111.414-1.414zM10 16a6 6 0 100-12 6 6 0 000 12z"
+          clip-rule="evenodd"
+        />
+      </svg>
+    </span>
+  </div>
+   -->
+
+<!-- searchbar.component.html -->
+
+<div class="flex items-center max-w-md bg-gray-100 rounded-lg overflow-hidden shadow-sm">
+  <input
+    #townInput
+    type="text"
+    class="py-2 px-4 w-full text-gray-800 border border-blue-500 rounded-lg focus:outline-none focus:border-blue-500"
+    placeholder="Search Town..."
+  />
+  <button
+    (click)="onSearch(townInput.value)"
+    class="px-4 py-2 bg-blue-600 text-white font-bold rounded-r-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600"
+  >
+    <svg
+      class="w-6 h-6 fill-current text-white mr-2"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M14.828 13.172a8 8 0 111.414-1.414l5.792 5.792a1 1 0 01-1.414 1.414l-5.792-5.792zM8 14a6 6 0 100-12A6 6 0 008 14z"
+      />
+    </svg>
+  </button>
+</div>
+
+  
+  

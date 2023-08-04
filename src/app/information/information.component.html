@@ -1,0 +1,31 @@
+<div class="flex flex-col items-center mt-8">
+  <h1 class="text-4xl font-bold mb-4 text-blue-600">Load Shedding Schedule</h1>
+  <div class="text-xl mb-6">Today's Schedule</div>
+  <div class="text-5xl font-bold mb-6 text-blue-600">
+    Stage {{ currentStage }}
+  </div>
+  <div class="grid grid-cols-2 gap-4 w-full max-w-4xl">
+    <div *ngFor="let scheduleItem of schedule.slice(0, 1)" class="text-sm border border-blue-600 rounded-lg p-4">
+      <span class="block mb-2">{{ scheduleItem.date }}</span>
+      <ng-container *ngFor="let outage of scheduleItem.outages">
+        <span class="block mb-2">{{ outage }}</span>
+      </ng-container>
+      <div class="flex flex-wrap gap-2">
+        <div *ngFor="let stage of scheduleItem.schedule" class="px-3 py-1 rounded-md bg-blue-600 text-white">
+          {{ stage }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-6 text-xl">Upcoming LoadShedding Days</div>
+  <div class="grid grid-cols-2 gap-4 w-full max-w-4xl">
+    <div *ngFor="let scheduleItem of schedule.slice(1) | slice:0:4" class="text-sm border border-gray-300 rounded-lg p-4">
+      <span class="block mb-2">{{ scheduleItem.date }}</span>
+      <div class="flex flex-wrap gap-2">
+        <div *ngFor="let stage of scheduleItem.schedule" class="px-2 py-1 rounded-md bg-gray-300">
+          {{ stage }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

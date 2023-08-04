@@ -1,0 +1,24 @@
+<div class="bg-black p-4 text-white relative">
+  <button (click)="goBack()" class="fixed bottom-0 left-4 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-600">
+    Back
+  </button>
+  <div class="text-sm font-mono">
+    <pre>
+Response Object
+<span class="line">&brvbar;</span> details
+<span class="line">│</span>   ├── currentStage: {{ apiResponse?.details?.currentStage }}
+<!-- │   ├── reason: {{ apiResponse?.details?.reason }} -->
+<span class="line">│</span>   └── nextStages: 
+<span *ngFor="let item of apiResponse?.details?.nextStages; let isLast = last">
+    <span class="line">│</span>       ├── date: {{ item?.date }}
+    <span class="line">│</span>       └── schedule: {{ item?.schedule | json }}{{ !isLast ? '\n' : '' }}
+</span>
+<span class="line">├── schedule</span>
+<span class="line">│</span>   └── <span *ngFor="let item of apiResponse?.schedule; let isLast = last">
+    <span class="line">│</span>       ├── date: {{ item?.date }}
+    <span class="line">│</span>       └── schedule: {{ item?.schedule | json }}{{ !isLast ? '\n' : '' }}
+<span class="line">│</span>   </span>
+<span class="line">└── town: {{ apiResponse?.town }}</span>
+    </pre>
+  </div>
+</div>
